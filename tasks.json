@@ -1,0 +1,22 @@
+{
+  // These tasks will run in order when initializing your CodeSandbox project.
+  "setupTasks": [],
+
+  // These tasks can be run from CodeSandbox. Running one will open a log in the app.
+  "tasks": {
+    "supervisord": {
+      "name": "supervisord",
+      "command": "/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf",
+      "preview": {
+        "port": 8080,
+        "prLink": "direct"
+      },
+      "runAtStart": true
+    },
+    "info": {
+      "name": "info",
+      "command": "cat /usr/local/myapp/info",
+      "runAtStart": true
+    }
+  }
+}
