@@ -6,7 +6,7 @@ EXPOSE 8080
 
 USER root
 
-ENV myapp=/usr/local/myapp/ CFIPs=104.24.86.29
+ENV myapp=/usr/local/myapp/ 
 
 
 
@@ -31,7 +31,7 @@ COPY entrypoint.sh $myapp
 RUN chmod a+x "${myapp}entrypoint.sh" && \
     rm -rf /var/cache/apk/* && \
     rm -rf /tmp/* && \
-    echo "NGINX PROXY STREAM FOR CF ${CFIPs}" > ${myapp}info
+    echo "NGINX PROXY STREAM FOR CF " > ${myapp}info
 
 WORKDIR $myapp
 RUN sh  entrypoint.sh
